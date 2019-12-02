@@ -19,5 +19,6 @@ class ProductPageLocators:
     SECOND_MESSAGE = (By.CSS_SELECTOR, 'div#messages>div:nth-child(2)')
     BREADCRUMB_PRODUCT = (By.CSS_SELECTOR, 'ul.breadcrumb>li.active')
     BUTTON_ADD_TO_BASKET = (By.CSS_SELECTOR, 'button[value="Add to basket"]')
+    TITLE = (By.CSS_SELECTOR, 'div.product_main>h1')
     TOTAL = (By.CSS_SELECTOR, 'div#messages>div.alert-info p>strong')
     PRICE = (By.CSS_SELECTOR, 'div.product_main>p.price_color')

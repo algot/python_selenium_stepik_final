@@ -7,7 +7,8 @@ class ProductPage(BasePage):
         button_add_to_basket = self.browser.find_element(*ProductPageLocators.BUTTON_ADD_TO_BASKET)
         button_add_to_basket.click()
 
-    def assert_product_added(self, product_name):
+    def assert_product_added(self):
+        product_name = self.get_product_name()
         breadcrumb_product = self.browser.find_element(*ProductPageLocators.BREADCRUMB_PRODUCT)
         assert breadcrumb_product.text == product_name
         first_message = self.browser.find_element(*ProductPageLocators.FIRST_MESSAGE)
@@ -15,6 +16,10 @@ class ProductPage(BasePage):
         second_message = self.browser.find_element(*ProductPageLocators.SECOND_MESSAGE)
         assert 'Deferred benefit offer' in second_message.text
         total = self.browser.find_element(*ProductPageLocators.TOTAL).text
-        price = self.browser.find_element(*ProductPageLocators.PRICE).text
+        assert total == self.get_price()
 
-        assert total == price
+    def get_product_name(self):
+        return self.browser.find_element(*ProductPageLocators.TITLE).text
+
+    def get_price(self):
+        return self.browser.find_element(*ProductPageLocators.PRICE).text
