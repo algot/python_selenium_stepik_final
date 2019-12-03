@@ -1,8 +1,9 @@
 from selenium.webdriver.common.by import By
 
 
-class MainPageLocators:
+class BasePageLocators:
     LOGIN_LINK = (By.CSS_SELECTOR, '#login_link')
+    LOGIN_LINK_INVALID = (By.CSS_SELECTOR, '#login_link_inc')
 
 
 class LoginPageLocators:
@@ -15,8 +16,8 @@ class LoginPageLocators:
 
 
 class ProductPageLocators:
-    FIRST_MESSAGE = (By.CSS_SELECTOR, 'div#messages>div:first-child')
-    SECOND_MESSAGE = (By.CSS_SELECTOR, 'div#messages>div:nth-child(2)')
+    SUCCESS_MESSAGE = (By.CSS_SELECTOR, 'div#messages>div:first-child')
+    OFFER_MESSAGE = (By.CSS_SELECTOR, 'div#messages>div:nth-child(2)')
     BREADCRUMB_PRODUCT = (By.CSS_SELECTOR, 'ul.breadcrumb>li.active')
     BUTTON_ADD_TO_BASKET = (By.CSS_SELECTOR, 'button[value="Add to basket"]')
     TITLE = (By.CSS_SELECTOR, 'div.product_main>h1')
