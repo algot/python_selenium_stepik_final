@@ -1,4 +1,3 @@
-from selenium.webdriver.remote import webdriver
 import pytest
 
 from pages.login_page import LoginPage
